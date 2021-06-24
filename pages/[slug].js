@@ -17,7 +17,7 @@ export default Post
 // tell next how many pages there are
 
 export async function getStaticPaths() {
-    const res = await fetch("http://localhost:1337/posts");
+    const res = await fetch("https://vast-sands-46200.herokuapp.com/posts");
     const posts = await res.json()
 
     const paths = posts.map((post) => ({
@@ -39,7 +39,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
     const {slug} =  params
 
-    const res = await fetch(`http://localhost:1337/posts?Slug=${slug}`);
+    const res = await fetch(
+      `https://vast-sands-46200.herokuapp.com/posts?Slug=${slug}`
+    );
     const data = await res.json()
     const post = data[0]
 

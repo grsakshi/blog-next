@@ -20,7 +20,7 @@ export default function Home({ posts }) {
 export async function getStaticProps(){
   // get posts from our api
 
-  const res = await fetch("http://localhost:1337/posts");
+  const res = await fetch("https://vast-sands-46200.herokuapp.com/posts");
 
   const posts = await res.json()
 
